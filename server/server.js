@@ -10,7 +10,7 @@ app.use(express.static('server/public'));
 
 const router = require('./routers/router')
 
-app.use('/info', router);
+app.use('/pictures', router);
 
 app.listen(PORT, function(){
     console.log('Listening on port:', PORT);

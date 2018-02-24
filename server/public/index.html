@@ -8,12 +8,16 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <script src="styles/styles.css"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Gallary</h1>
     <main ng-controller="MainController as vm">
-
+        <div ng-repeat="picture in vm.picArray"></div>
+            <div>{{picture.picture}} <button type=button class="btn btn-info" >Story</button>
+            <button type=button class="btn btn-danger"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+            </div>
 
 
     </main>
