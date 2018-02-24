@@ -1,12 +1,19 @@
-body{
+body {
     margin: 20px;
 }
 
-h1{
-    margin: 20px,
+h1 {
+    margin: 20px;
 }
 
 
 main {
-    border: 20px,
+    border: 20px;
+}
+
+img {
+    border: sienna;
+    border-radius: 10px;
+    max-width: 30%;
+    height: auto
 }

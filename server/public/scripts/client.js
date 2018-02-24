@@ -3,7 +3,7 @@ const app = angular.module('pictureApp', []);
 const mainController = app.controller('MainController', ['$http', function($http){
  let self = this;
 
-self.picArray[];
+    self.picArray = [ ];
 
 self.getPictures = function(){
     $http({
@@ -19,4 +19,5 @@ self.getPictures = function(){
     })
 }
 
+self.getPictures();
 }])
