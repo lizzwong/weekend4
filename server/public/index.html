@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <title>Gallery</title>
 </head>
-<body>
+<body ng-controller="MainController as vm">
     <div class="jumbotron">
     <h1>Gallery</h1>
+    <p>These are a few pictures that are important to me, with a little story behind each one. </p>
     </div>
-    <main ng-controller="MainController as vm">
-        <div class="col-md-4" ng-repeat="picture in vm.picArray">
-                <img src="{{picture.picture}}" alt=img src="/images/nationalization.png">
-               
+    <main >
+       <div container="col-md-12">
+           <div class="col-md-4" ng-repeat="picture in vm.picArray"> 
+            <div ng-hide="picture.story">
+                <img src="{{picture.picture}}"  >
+            </div>   
             <h3 class="pictureStuff">{{picture.title}}</h3> 
                     <div ng-show="picture.story" class="alert" role="alert">
                         "{{picture.description}}" <br>
@@ -29,9 +32,11 @@
             <button type=button class="btn btn-info" ng-hide="picture.story" ng-click="vm.showStory(picture)">Story</button>
             <button type=button class="btn btn-danger" ng-click="vm.addHeart(picture)">
                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
-                {{picture.hearts}}
+                {{picture.hearts}} loves !
             </div>
+        
         </div>
+       </div> 
     </main>
 </body>
 </html>
