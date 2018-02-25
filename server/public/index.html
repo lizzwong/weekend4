@@ -12,14 +12,18 @@
     <title>Gallery</title>
 </head>
 <body>
+    <div class="jumbotron">
     <h1>Gallery</h1>
+    </div>
     <main ng-controller="MainController as vm">
         <div ng-repeat="picture in vm.picArray">
-            <div>
-                <img src="{{picture.picture}}" alt="{{picture.description}}"><br>
-                {{picture.title}} <button type=button class="btn btn-info" >Story</button>
+        <div class="col-md-4" >
+                <img src="{{picture.picture}}" alt=img src="/images/nationalization.png"><br>
+               
+            <div class="pictureStuff">{{picture.title}} <button type=button class="btn btn-info" >Story</button>
             <button type=button class="btn btn-danger"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
             </div>
+        </div>
 
         </div>
     </main>

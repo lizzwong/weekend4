@@ -13,7 +13,12 @@ main {
 
 img {
     border: sienna;
-    border-radius: 10px;
-    max-width: 30%;
+    border-width: 3px;
+    border-radius: 15px;
+    max-width: 100%;
     height: auto
+}
+
+.pictureStuff {
+    padding: 4px;
 }
