@@ -5,7 +5,7 @@ body {
 
 .jumbotron {
     font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
+    font-weight: bold;
     margin: 10px;
     padding: 8px;
     background-color:rgb(242, 234, 231);
@@ -23,8 +23,8 @@ main {
 }
 
 img {
-    border: sienna;
-    border-width: 3px;
+    border-style: inherit;
+    border-width: 2px;
     border-radius: 9px;
     max-width: 100%;
     height: auto
@@ -35,11 +35,16 @@ img {
 }
 
 .pictureStuff{
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+    
 }
 
 .alert{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 17px;
+    border: sienna;
+    border-style: dotted;
+    border-width: 2px;
+    border-radius: 9px;
 }

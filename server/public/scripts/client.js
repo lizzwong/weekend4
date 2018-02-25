@@ -5,6 +5,7 @@ const mainController = app.controller('MainController', ['$http', function($http
 
     self.picArray = [ ];
 
+    self.commentArray = 
 self.getPictures = function () {
      $http({
         method: 'GET',
@@ -45,6 +46,10 @@ self.addHeart = function(picture){
         picture.story = false;
     }
 
+    self.showComment = function (picture) {
+
+        picture.comment = true;
+    }
 
    
 

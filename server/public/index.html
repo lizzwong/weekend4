@@ -28,13 +28,21 @@
                         <button class="btn btn-info" ng-click="vm.hideStory(picture)">Hide</button>
                     </div>
 
+
             <div class="pictureButtons">       
             <button type=button class="btn btn-info" ng-hide="picture.story" ng-click="vm.showStory(picture)">Story</button>
             <button type=button class="btn btn-danger" ng-click="vm.addHeart(picture)">
                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
-                {{picture.hearts}} loves !
+                {{picture.hearts}} loves ! <br>
+                            <div ng-show="picture.comment">
+                            <input type=text ng-model="vm.commentBody" placeholder="Comment">
+                            <button type="button" class="btn btn-warning" ng-click="vm.addComment(commentBody)">Send</button>
+                            </div>
+                <button type=button class="btn btn-warning" ng-hide="picture.comment" ng-click="vm.showComment(picture)">
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
             </div>
-        
+
+
         </div>
        </div> 
     </main>
