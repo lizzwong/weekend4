@@ -16,15 +16,21 @@
     <h1>Gallery</h1>
     </div>
     <main ng-controller="MainController as vm">
-        <div ng-repeat="picture in vm.picArray">
-        <div class="col-md-4" >
-                <img src="{{picture.picture}}" alt=img src="/images/nationalization.png"><br>
+        <div class="col-md-4" ng-repeat="picture in vm.picArray">
+                <img src="{{picture.picture}}" alt=img src="/images/nationalization.png">
                
-            <div class="pictureStuff">{{picture.title}} <button type=button class="btn btn-info" >Story</button>
-            <button type=button class="btn btn-danger"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
-            </div>
-        </div>
+            <h3 class="pictureStuff">{{picture.title}}</h3> 
+                    <div ng-show="picture.story" class="alert" role="alert">
+                        "{{picture.description}}" <br>
+                        <button class="btn btn-info" ng-click="vm.hideStory(picture)">Hide</button>
+                    </div>
 
+            <div class="pictureButtons">       
+            <button type=button class="btn btn-info" ng-hide="picture.story" ng-click="vm.showStory(picture)">Story</button>
+            <button type=button class="btn btn-danger" ng-click="vm.addHeart(picture)">
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+                {{picture.hearts}}
+            </div>
         </div>
     </main>
 </body>

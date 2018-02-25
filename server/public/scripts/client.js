@@ -5,19 +5,48 @@ const mainController = app.controller('MainController', ['$http', function($http
 
     self.picArray = [ ];
 
-self.getPictures = function(){
+
+self.addHeart = function(picture){
+    console.log('in addHeart');
+    
     $http({
-        method:'GET',
-        url:'/pictures',
+        method:'PUT',
+        url:`/pictures/${picture.id}`,
     })
     .then(function(response){
-        console.log('Getting Pictures', response.data);
-        self.picArray = response.data;
+        console.log('Heart added', response);
+        self.getPictures();
     })
     .catch(function(error){
-        console.log('Error getting Pictures', error);
+        console.log('Error adding heart', error);
     })
 }
 
+    self.showStory = function (picture) {
+
+        picture.story = true;
+    }
+
+    self.hideStory = function (picture) {
+
+        picture.story = false;
+    }
+
+
+    self.getPictures = function () {
+        $http({
+            method: 'GET',
+            url: '/pictures',
+        })
+            .then(function (response) {
+                console.log('Getting Pictures', response.data);
+                self.picArray = response.data;
+            })
+            .catch(function (error) {
+                console.log('Error getting Pictures', error);
+            })
+    }
+
 self.getPictures();
+
 }])

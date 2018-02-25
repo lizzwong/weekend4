@@ -2,6 +2,11 @@ body {
     margin: 20px;
 }
 
+.jumbotron {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
 h1 {
     margin: 20px;
 }
@@ -19,6 +24,6 @@ img {
     height: auto
 }
 
-.pictureStuff {
-    padding: 4px;
+.pictureButtons {
+    padding: 3px;
 }
