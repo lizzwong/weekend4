@@ -34,12 +34,17 @@
             <button type=button class="btn btn-danger" ng-click="vm.addHeart(picture)">
                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
                 {{picture.hearts}} loves ! <br>
-                            <div ng-show="picture.comment">
-                            <input type=text ng-model="vm.commentBody" placeholder="Comment">
-                            <button type="button" class="btn btn-warning" ng-click="vm.addComment(commentBody)">Send</button>
+                            <div ng-show="picture.comment" id={{picture.id}}>
+                            <input type=text ng-model="vm.picture.commentBody" placeholder="Comment">
+                            <button type="button" class="btn btn-warning" ng-click="vm.addComment(picture, vm.picture.commentBody)">Send</button>
+                                    <button type=button class="btn btn-primary" ng-hide="picture.allComments" ng-click="vm.getComments(picture)">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                                            <div ng-show="picture.allComments" ng-repeat="comment in vm.commentArray">
+                                                <p>{{comment.comment}}</p>
+                                            </div>
                             </div>
                 <button type=button class="btn btn-warning" ng-hide="picture.comment" ng-click="vm.showComment(picture)">
-                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
             </div>
 
 
